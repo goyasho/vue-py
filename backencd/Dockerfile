@@ -15,4 +15,8 @@ RUN pip3 install -r requirements.txt
 
 #VOLUME ./app
 
-#CMD ["python3", "-c", "print('Hello')"]
+## 以下の設定だと下記で起動する
+## docker run -p 5000:5000 -v ${PWD}/app:/web/app --name vue-py vue-py:1.0
+ENV FLASK_APP ./run.py
+
+CMD ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]
