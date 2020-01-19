@@ -10,6 +10,7 @@ sys.dont_write_bytecode = True
 @app.route('/', methods=['GET'])
 @app.route("/<path>", methods=['GET'])
 def hello(path: str = '') -> str:
+    print('#hello')
     return create_message(path)
 
 
