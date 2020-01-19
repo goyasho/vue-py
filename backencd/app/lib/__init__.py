@@ -1,1 +1,1 @@
-from app.lib.message import *
+from .message import *

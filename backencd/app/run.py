@@ -1,7 +1,6 @@
 import sys
-from flask import Flask, jsonify, request
-from app.lib import create_message
-
+from flask import Flask
+from lib import create_message
 
 app = Flask(__name__)
 
