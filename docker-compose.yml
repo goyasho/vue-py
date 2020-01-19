@@ -4,7 +4,6 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
     image: vue-py:1.0
     container_name: backend_container
     tty: true
@@ -14,5 +13,6 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - ./backend/app:/web/app
+    command: 'flask run --host 0.0.0.0 --port 5000'
     #    links:
     #      -
