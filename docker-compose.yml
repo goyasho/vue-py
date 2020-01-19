@@ -12,7 +12,7 @@ services:
     environment:
       TZ: 'Asia/Tokyo'
     volumes:
-      - ./backend/app:/web/app
+      - ./backend/app:/web/app/backend
     command: 'flask run --host 0.0.0.0 --port 5000'
     #    links:
     #      -
