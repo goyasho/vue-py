@@ -1,11 +1,13 @@
 import sys
 from flask import Flask, render_template
+from flask_cors import CORS
 from lib import create_message
 
 app = Flask(__name__,
             static_url_path='',
             static_folder='../../dist',
             template_folder='../../dist')
+CORS(app)
 
 sys.dont_write_bytecode = True
 

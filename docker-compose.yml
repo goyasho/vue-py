@@ -1,10 +1,27 @@
 version: '3'
 
 services:
+  frontend:
+    build:
+      context: ./frontend
+    image: vue-py-vue:1.0
+    container_name: frontend_container
+    links:
+      - backend
+    ports:
+      - '8080:8080'
+    environment:
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./frontend:/web/app/frontend
+    command: 'yarn serve'
+#    command: 'yarn build'
+## TODO: ビルドしてnginxで起動するなど
+
   backend:
     build:
       context: ./backend
-    image: vue-py:1.0
+    image: vue-py-py:1.0
     container_name: backend_container
     tty: true
     ports:
