@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: vue-py:1.0
+    container_name: backend_container
+    tty: true
+    ports:
+      - '5000:5000'
+    environment:
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./backend/app:/web/app
+    #    links:
+    #      -
